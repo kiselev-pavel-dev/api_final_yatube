@@ -41,14 +41,13 @@ class FollowSerializer(serializers.ModelSerializer):
             )
         ]
 
-    def create(self, validated_data):
-        user = validated_data.get('user')
-        following = validated_data.get('following')
-        if user == following:
+    def validate_following(self, value):
+        user = self.context.get('request').user
+        if user == value:
             raise serializers.ValidationError(
                 'Нельзя подписаться на самого себя'
             )
-        return super().create(validated_data)
+        return value
 
 
 class GroupSerializer(serializers.ModelSerializer):
