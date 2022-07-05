@@ -6,7 +6,7 @@
 
 ## Стек:
 
-Python, Django Rest Framework, SQLite
+Python, Django Rest Framework, SQLite, Redoc
 
 ## Как запустить проект (Windows):
 
