@@ -23,11 +23,11 @@ cd api_final_yatube
 Cоздать и активировать виртуальное окружение:
 
 ```
-python3 -m venv env
+python3 -m venv venv
 ```
 
 ```
-source env/bin/activate
+source venv/scripts/activate
 ```
 
 Установить зависимости из файла requirements.txt:
@@ -38,6 +38,12 @@ python3 -m pip install --upgrade pip
 
 ```
 pip install -r requirements.txt
+```
+
+Создать миграции:
+
+```
+python3 manage.py makemigrations
 ```
 
 Выполнить миграции:
